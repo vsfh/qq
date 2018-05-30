@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27130.2010
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "即时通信系统", "即时通信系统\即时通信系统.vcxproj", "{25F23A6C-6C5F-48C5-A612-40364B170F2C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x64 = Debug|x64
+		Debug|x86 = Debug|x86
+		Release|x64 = Release|x64
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{25F23A6C-6C5F-48C5-A612-40364B170F2C}.Debug|x64.ActiveCfg = Debug|x64
+		{25F23A6C-6C5F-48C5-A612-40364B170F2C}.Debug|x64.Build.0 = Debug|x64
+		{25F23A6C-6C5F-48C5-A612-40364B170F2C}.Debug|x86.ActiveCfg = Debug|Win32
+		{25F23A6C-6C5F-48C5-A612-40364B170F2C}.Debug|x86.Build.0 = Debug|Win32
+		{25F23A6C-6C5F-48C5-A612-40364B170F2C}.Release|x64.ActiveCfg = Release|x64
+		{25F23A6C-6C5F-48C5-A612-40364B170F2C}.Release|x64.Build.0 = Release|x64
+		{25F23A6C-6C5F-48C5-A612-40364B170F2C}.Release|x86.ActiveCfg = Release|Win32
+		{25F23A6C-6C5F-48C5-A612-40364B170F2C}.Release|x86.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {9222DA5B-0238-43A6-B817-97E2B66871A0}
+	EndGlobalSection
+EndGlobal
