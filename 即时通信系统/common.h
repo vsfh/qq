@@ -1,0 +1,9 @@
+#pragma once
+#include <stdio.h>
+#include <string.h>
+#include <time.h>
+#include <fstream>
+#include <vector>
+#include <stdlib.h>
+#include <Windows.h>
+#include <iostream>

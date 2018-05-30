@@ -14,4 +14,68 @@
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
   </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="sfh_List.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="sfh_Person.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="sfh_Group.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="common.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="function_get.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="sfh_qq.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="sfh_weibo.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="sfh_wechat.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="sfh_weix.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="beauty.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="sfh_List.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="sfh_Person.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="sfh_Group.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="main.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="function_get.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="sfh_qq.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="sfh_weibo.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="sfh_wechat.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="sfh_weix.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="beauty.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+  </ItemGroup>
 </Project>
