@@ -127,6 +127,8 @@ bool sfh_Group::add_manager(const char * id) {
 bool sfh_Group::add_manager() {
 	char qq[12];
 	int i;
+	if (type == 2)
+		printf("wechat群无此功能");
 	printf("添加管理员：请输入管理员的id:   ");
 	getstring(qq, 12, ' ');
 	return add_manager(qq);

@@ -89,7 +89,7 @@ void sfh_wechat::bangding()
 		return;
 	}
 	printf("请输入要绑定的qq号码:\n");
-	getstring(qqnum, 12, ' ');
+	getstring(qqnum, 10, ' ');
 	if (!is_person(qqnum)) {
 		printf("这个qq号码不存在\n");
 		return;

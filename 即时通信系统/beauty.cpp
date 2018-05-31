@@ -69,12 +69,12 @@ void sfh_Person::menu_friends() {//搜索 添加 删除 修改好友备注 查询共同好友 ++
 		else
 			for (int i = 0; i<friends.size; i++) {
 				sfh_Person * tmp = get_person(friends.nodes[i].ID);
-				printf("|     %-12s %-20s %-6s|\n", friends.nodes[i].ID, friends.nodes[i].name, (tmp->get_usrlogmod() == 0 ? "不在线" : "在线"), tmp->get_usrrank());
+				printf("|     %-12s %-20s %-6s|\n", friends.nodes[i].ID, friends.nodes[i].name, (tmp->get_usrlogmod() == 0 ? "不在线" : "在线"));
 			}
 		printf("|---------------------------------------------|\n"
 			"|      1.搜索好友        2.添加好友           |\n"
 			"|      3.修改好友备注    4.删除好友           |\n"
-			"|                  5.返回                     |\n"
+			"|      5.查询共同好友    6.退出               |\n"
 			"|---------------------------------------------|\n");
 		choice = getint();
 		while (choice < 1 || choice > 5)
@@ -92,6 +92,8 @@ void sfh_Person::menu_friends() {//搜索 添加 删除 修改好友备注 查询共同好友 ++
 		case 4:
 			del_friend(); break;
 		case 5:
+			find_common_friend(); break;
+		case 6:
 			return; break;
 		}
 		system("pause");
@@ -167,7 +169,7 @@ void sfh_Person::group_manage() {
 		printf("|---------------------------------------------|\n"
 			"|      1.添加群成员      2.删除群成员         |\n"
 			"|      3.更改群名称      4.设置管理员         |\n"
-			"|              5.退出群管理                   |\n"
+			"|      5.添加临时讨论组  5.退出群管理         |\n"
 			"|---------------------------------------------|\n");
 		choice = getint();
 		while (choice < 1 || choice > 5)
@@ -185,6 +187,8 @@ void sfh_Person::group_manage() {
 		case 4:
 			tmp->add_manager(); break;
 		case 5:
+			create_group();
+		case 6:
 			return; break;
 		}
 		system("pause");
@@ -241,7 +245,7 @@ void sfh_Person::menu_safe() {//改密码 绑定--
 		printf("|----------------账户安全管理-----------------|\n"
 			"|        1.修改密码        2.绑定关系         |\n"
 			"|                    3.返回                   |\n"
-			"|---------------------------------------------|\n", get_name(), get_birth(), get_location());
+			"|---------------------------------------------|\n");
 		choice = getint();
 		while (choice < 1 || choice > 3)
 		{
@@ -303,7 +307,7 @@ void sfh_qq::menu() {
 			else
 				for (int i = 0; i<friends.size; i++) {
 					sfh_Person * tmp = get_person(friends.nodes[i].ID);
-					printf("|     %-12s %-20s %-6s|\n", friends.nodes[i].ID, friends.nodes[i].name, (tmp->get_usrlogmod() == 0 ? "不在线" : "在线"), tmp->get_usrrank());
+					printf("|     %-12s %-20s %-6s|\n", friends.nodes[i].ID, friends.nodes[i].name, (tmp->get_usrlogmod() == 0 ? "不在线" : "在线"));
 				}
 			cout << "|" << setfill('-') << setw(46) << "|" << endl
 				<< "|" << "群列表：" << setfill(' ') << setw(35) << groups.size << "个|" << endl;
@@ -337,7 +341,6 @@ void sfh_qq::menu() {
 			}
 
 			sync();
-			getchar();
 			::sync();
 		}
 	}
@@ -383,7 +386,7 @@ void sfh_weibo::menu() {
 			else
 				for (int i = 0; i<friends.size; i++) {
 					sfh_Person * tmp = get_person(friends.nodes[i].ID);
-					printf("|     %-12s %-20s %-6s|\n", friends.nodes[i].ID, friends.nodes[i].name, (tmp->get_usrlogmod() == 0 ? "不在线" : "在线"), tmp->get_usrrank());
+					printf("|     %-12s %-20s %-6s|\n", friends.nodes[i].ID, friends.nodes[i].name, (tmp->get_usrlogmod() == 0 ? "不在线" : "在线"));
 				}
 			cout << "|" << setfill('-') << setw(46) << "|" << endl
 				<< "|" << setfill(' ') << setw(26) << "4.好友管理" << setw(20) << "|" << endl
@@ -451,7 +454,7 @@ void sfh_wechat::menu() {
 			else
 				for (int i = 0; i<friends.size; i++) {
 					sfh_Person * tmp = get_person(friends.nodes[i].ID);
-					printf("|     %-12s %-20s %-6s|\n", friends.nodes[i].ID, friends.nodes[i].name, (tmp->get_usrlogmod() == 0 ? "不在线" : "在线"), tmp->get_usrrank());
+					printf("|     %-12s %-20s %-6s|\n", friends.nodes[i].ID, friends.nodes[i].name, (tmp->get_usrlogmod() == 0 ? "不在线" : "在线"));
 				}
 			cout << "|" << setfill('-') << setw(46) << "|" << endl
 				<< "|" << "群列表：" << setfill(' ') << setw(35) << groups.size << "个|" << endl;
@@ -530,7 +533,7 @@ void sfh_weix::menu() {
 			else
 				for (int i = 0; i<friends.size; i++) {
 					sfh_Person * tmp = get_person(friends.nodes[i].ID);
-					printf("|     %-12s %-20s %-6s|\n", friends.nodes[i].ID, friends.nodes[i].name, (tmp->get_usrlogmod() == 0 ? "不在线" : "在线"), tmp->get_usrrank());
+					printf("|     %-12s %-20s %-6s|\n", friends.nodes[i].ID, friends.nodes[i].name, (tmp->get_usrlogmod() == 0 ? "不在线" : "在线"));
 				}
 			cout << "|" << setfill('-') << setw(46) << "|" << endl
 				<< "|" << setfill(' ') << setw(26) << "4.好友管理" << setw(20) << "|" << endl

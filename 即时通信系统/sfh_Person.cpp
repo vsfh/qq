@@ -210,6 +210,24 @@ bool sfh_Person::set_others(int y, int r, int k)
 		 *this = *tmp;
 		 usr_logmod = 1;
 		 usr_mod = 1;
+		 if (strcmp(qq_bund, "0") != 0)
+		 {
+			 sfh_Person * tmp = get_person(qq_bund);
+			 tmp->usr_logmod = 1;
+			 printf("QQ已自动登陆\n");
+		 }
+		 if (strcmp(weibo, "0") != 0)
+		 {
+			 sfh_Person * tmp = get_person(weibo);
+			 tmp->usr_logmod = 1;
+			 printf("微信已自动登陆\n");
+		 }
+		 if (strcmp(wechat, "0") != 0)
+		 {
+			 sfh_Person * tmp = get_person(wechat);
+			 tmp->usr_logmod = 1;
+			 printf("微博已自动登陆\n");
+		 }
 		 printf("登陆成功\n");
 		 return 1;
 	 }
@@ -277,6 +295,8 @@ bool sfh_Person::set_others(int y, int r, int k)
  bool sfh_Person::add_group()
  {
 	 char id[10];
+	 if (type != 1)
+		 printf("wechat群只能推荐加入");
 	 printf("请输入群号码\n");
 	 getstring(id, 10, ' ');
 	 if (!is_group(id)) {
@@ -450,10 +470,23 @@ bool sfh_Person::set_others(int y, int r, int k)
  }
  bool sfh_Person::find_common_friend() {
 	 printf("获取共同好友: \n");
-	 printf("请输入好友id:  ");
-	 char qq[10];
-	 getstring(qq, 10, ' ');
-	 return find_common_friend(qq);
+	 printf("请输入想添加的服务: 1.QQ,2.weibo,3.wechat ");
+	 int num;
+	 num=getint();
+	 while (num < 1 || num > 3)
+	 {
+		 printf("输入错误，请重新输入\n");
+		 num = getint();
+	 }
+	 if (num == 2)
+		 return find_common_friend(weibo);
+	 else if (num == 1)
+	 {
+		  return find_common_friend(qq_bund);
+	 }
+	 else  {
+		 return find_common_friend(wechat);
+	 }
  }
  bool sfh_Person::find_common_friend(const char * id) {
 	 bool tmp[2][10000] = { 0 };
